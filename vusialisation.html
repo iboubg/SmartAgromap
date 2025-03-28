@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartAgroMap - Visualisation</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Librairie Leaflet pour la carte -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <div class="page-container">
+        <!-- En-tête -->
+        <header class="main-header">
+            <div class="header-content">
+                <h1><span class="logo-icon">🌱</span> SmartAgroMap</h1>
+                <p class="tagline">Solutions intelligentes pour l'agroforesterie durable</p>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <div class="nav-container">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="objectif.html" class="nav-link">Objectifs</a>
+                 <a href="produit.html">produits</a>
+                  <a href="service.html">service</a>
+                <a href="durabilite.html" class="nav-link">Durabilité</a>
+                <a href="visualisation.html" class="nav-link active">Visualisation</a>
+            </div>
+        </nav>
+
+        <!-- Contenu principal avec espace pour la carte -->
+        <main class="main-content">
+            <section class="map-container" id="map">
+                <!-- La carte sera insérée ici via JavaScript -->
+                <div class="map-placeholder">
+                    <p>Carte interactive en cours de chargement...</p>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>Visualisation des données agroforestières</h2>
+                <p>Notre plateforme vous permet de visualiser en temps réel les données collectées par nos capteurs IoT à travers nos différentes parcelles expérimentales.</p>
+            </section>
+        </main>
+
+        <!-- Pied de page -->
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SmartAgroMap</h3>
+                    <p>Innovation technologique pour une agriculture durable</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="icon">✉️</i> .......@..........com</p>
+                    <p><i class="icon">📞</i> +221 .. ... .. ..</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Réseaux sociaux</h4>
+                    <a href="#"><i class="icon">📱</i> Facebook</a>
+                    <a href="#"><i class="icon">📸</i> Instagram</a>
+                    <a href="#"><i class="icon">🔗</i> LinkedIn</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 SmartAgroMap. Tous droits réservés.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Script Leaflet pour la carte -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Initialisation de la carte (exemple basique)
+        document.addEventListener('DOMContentLoaded', function() {
+            const map = L.map('map').setView([14.6928, -17.4467], 13); // Coordonnées de Dakar par défaut
+            
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            
+            // Ajouter un marqueur exemple
+            L.marker([14.6928, -17.4467]).addTo(map)
+                .bindPopup('Parcelle expérimentale SmartAgroMap')
+                .openPopup();
+        });
+    </script>
+</body>
+</html>
